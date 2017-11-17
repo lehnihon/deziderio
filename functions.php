@@ -115,6 +115,97 @@ function template_chooser($template)
 add_filter('template_include', 'template_chooser');
 
 
+function register_post_type_itinerario(){
+	$singular = 'Itinerario';
+	$plural = 'Itinerarios';
+	$labels = array(
+		'name' => $plural,
+		'singular_name' => $singular,
+		'add_new_item' => 'Adicionar novo '.$singular,
+		);
+	$args = array(
+		'labels' => $labels,
+		'public' => true,
+        'supports' => array('title'),
+        'menu_position' => 5
+		);
+
+	register_post_type('itinerario',$args);
+}
+add_action(	'init','register_post_type_itinerario');
+flush_rewrite_rules();
+function register_taxonomy_linha(){
+    $labels = array(
+        'name'              => _x( 'Linha', 'taxonomy general name' ),
+        'singular_name'     => _x( 'Linhas', 'taxonomy singular name' ),
+        'search_items'      => __( 'Procurar Linha' ),
+        'all_items'         => __( 'Todas Linhas' ),
+        'parent_item'       => __( 'Parent Course' ),
+        'parent_item_colon' => __( 'Parent Course:' ),
+        'edit_item'         => __( 'Editar Linha' ),
+        'update_item'       => __( 'Atualizar Linha' ),
+        'add_new_item'      => __( 'Adicionar Linha' ),
+        'new_item_name'     => __( 'Nome Nova Linha' ),
+        'menu_name'         => __( 'Linha' ),
+    );
+ 
+    $args = array(
+        'hierarchical'      => true,
+        'labels'            => $labels,
+        'show_ui'           => true,
+        'show_admin_column' => true,
+        'query_var'         => true
+    );
+	register_taxonomy( 'categoria_linha', 'itinerario', $args );
+}
+add_action('init','register_taxonomy_linha');
+
+
+abstract class WPOrg_Meta_Box
+{
+    public static function add()
+    {
+        add_meta_box(
+            'wporg_box_id',          // Unique ID
+            'Adicionar', // Box title
+            [self::class, 'html'],   // Content callback, must be of type callable
+            'itinerario'                  // Post type
+        );
+    }
+
+    public static function save($post_id)
+    {
+        if (array_key_exists('wporg_field', $_POST)) {
+            update_post_meta(
+                $post_id,
+                '_wporg_meta_key',
+                $_POST['wporg_field']
+            );
+        }
+    }
+
+    public static function html($post)
+    {
+        $value = get_post_meta($post->ID, '_wporg_meta_key', true);
+        ?>
+        <label for="itinerario_tipo">Tipo</label>
+        <select name="itinerario_tipo" id="itinerario_tipo" class="postbox">
+            <option value="">--Selecione--</option>
+            <option value="1" <?php selected($value, 'PARTIDA'); ?>>PARTIDA</option>
+            <option value="2" <?php selected($value, 'RETORNO'); ?>>RETORNO</option>
+        </select>
+        <a href="#" class="adicionar">Adicionar</a>
+        <script>
+        	jQuery('.adicionar').on('click',function(){
+        		alert('teste');
+        	})
+        </script>
+        <?php
+    }
+}
+
+add_action('add_meta_boxes', ['WPOrg_Meta_Box', 'add']);
+add_action('save_post', ['WPOrg_Meta_Box', 'save']);
 
 /**
  * Implement the Custom Header feature.
