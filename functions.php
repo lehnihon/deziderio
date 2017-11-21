@@ -160,52 +160,181 @@ function register_taxonomy_linha(){
 }
 add_action('init','register_taxonomy_linha');
 
-
-abstract class WPOrg_Meta_Box
+function wporg_add_custom_box()
 {
-    public static function add()
-    {
-        add_meta_box(
-            'wporg_box_id',          // Unique ID
-            'Adicionar', // Box title
-            [self::class, 'html'],   // Content callback, must be of type callable
-            'itinerario'                  // Post type
+    add_meta_box(
+        'wporg_box_id',           // Unique ID
+        'Itinerário',  // Box title
+        'wporg_custom_box_html',  // Content callback, must be of type callable
+        'itinerario'                   // Post type
+    );
+}
+add_action('add_meta_boxes', 'wporg_add_custom_box');
+
+function wporg_custom_box_html($post)
+{
+	$coordenador = get_post_meta($post->ID, 'coordenador', true);
+	$telefone = get_post_meta($post->ID, 'telefone', true);
+	$embarque = get_post_meta($post->ID, 'embarque', true);
+	$onibus = get_post_meta($post->ID, 'onibus', true);
+	$iframe = get_post_meta($post->ID, 'iframe', true);
+
+	$horariop = get_post_meta($post->ID, 'horariop', true);
+	$destinop = get_post_meta($post->ID, 'destinop', true);
+
+	$horarior = get_post_meta($post->ID, 'horarior', true);
+	$destinor = get_post_meta($post->ID, 'destinor', true);
+    ?>
+	<div style="overflow: auto;">
+	    <div style="float:left; width:33%">
+		    <input style="float:left; width:90%; padding:10px" type="text" name="coordenador" value="<?php echo $coordenador ?>" placeholder="COORDERNADOR">
+	    </div>
+	    <div style="float:left; width:33%">
+		    <input style="float:left; width:90%; padding:10px" type="text" name="telefone" value="<?php echo $telefone ?>" placeholder="TELEFONE">
+	    </div>
+	    <div style="float:left; width:33%">
+		    <input style="float:left; width:90%; padding:10px" type="text" name="embarque" value="<?php echo $embarque ?>" placeholder="EMBARQUE">
+	    </div>
+	</div>
+	<div style="overflow: auto;">
+	    <div style="float:left; width:33%">
+		    <input style="float:left; width:90%; padding:10px" type="text" name="onibus" value="<?php echo $onibus ?>" placeholder="ÔNIBUS">
+	    </div>
+	    <div style="float:left; width:33%">
+		    <input style="float:left; width:90%; padding:10px" type="text" name="iframe" value="<?php echo $iframe ?>" placeholder="MAPA">
+	    </div>
+	</div>
+    <div style="overflow: auto;">
+	    <div style="float:left; width:50%">
+		    <h2 style="font-size:18px; text-align:center; font-weight:bold; padding:10px;">PARTIDA</h2>
+	    </div>
+	    <div style="float:left; width:50%">
+		    <h2 style="font-size:18px; text-align:center; font-weight:bold; padding:10px;">RETORNO</h2>
+	    </div>
+	</div>
+    <div style="overflow: auto;">
+	    <div style="float:left; width:50%">
+		    <a class="partida" href="#" style="text-decoration:none; padding:10px; display:block; width:200px; text-align:center; border:2px solid #23282d;
+		color:#23282d">ADICIONAR PARTIDA</a>
+	    </div>
+	    <div style="float:left; width:50%">
+		    <a class="retorno" href="#" style="text-decoration:none; padding:10px; display:block; width:200px; text-align:center; border:2px solid #23282d;
+		color:#23282d">ADICIONAR RETORNO</a>
+	    </div>
+	</div><br>
+	<div class="cpartida" style="float:left; width:50%">
+		<?php
+		if(!empty($horariop)):
+			foreach($horariop as $i => $v):
+			?>
+			<div style="width:100%; margin-right:20px">
+				<input style="float:left; width:20%; padding:10px" type="text" name="horariop[]" value="<?php echo $v ?>" placeholder="Horário P">
+				<input style="float:left; width:70%; padding:10px" type="text" name="destinop[]" value="<?php echo $destinop[$i] ?>" placeholder="Destino P">
+			</div>
+			<?php
+			endforeach;
+		endif;
+		?>
+	</div>
+	<div class="cretorno" style="float:right; width:50%">
+		<?php
+		if(!empty($horarior)):
+			foreach($horarior as $i => $v):
+			?>
+			<div style="width:100%; margin-right:20px">
+				<input style="float:left; width:20%; padding:10px" type="text" name="horarior[]" value="<?php echo $v ?>" placeholder="Horário P">
+				<input style="float:left; width:70%; padding:10px" type="text" name="destinor[]" value="<?php echo $destinor[$i] ?>" placeholder="Destino P">
+			</div>
+			<?php
+			endforeach;
+		endif;
+			?>
+	</div>
+	<div style="clear:both"></div>
+	<script>
+		jQuery(document).ready(function(){
+
+		    jQuery('.partida').on('click',function(){
+		    	jQuery('.cpartida').append('<div style="width:100%; margin-right:20px"><input style="float:left; width:20%; padding:10px" type="text" name="horariop[]" placeholder="Horário P"><input style="float:left; width:70%; padding:10px" type="text" name="destinop[]" placeholder="Destino P"></div>');
+		    }); 
+		    jQuery('.retorno').on('click',function(){
+		    	jQuery('.cretorno').append('<div style="width:100%; margin-right:20px"><input style="float:left; width:20%; padding:10px" type="text" name="horarior[]" placeholder="Horário R"><input style="float:left; width:70%; padding:10px" type="text" name="destinor[]" placeholder="Destino R"></div>');
+		    }); 
+		});
+	</script>
+    <?php
+}
+
+function wporg_save_postdata($post_id)
+{
+	if (array_key_exists('coordenador', $_POST)) {
+        update_post_meta(
+            $post_id,
+            'coordenador',
+            $_POST['coordenador']
+        );
+    }
+    if (array_key_exists('telefone', $_POST)) {
+        update_post_meta(
+            $post_id,
+            'telefone',
+            $_POST['telefone']
         );
     }
 
-    public static function save($post_id)
-    {
-        if (array_key_exists('wporg_field', $_POST)) {
-            update_post_meta(
-                $post_id,
-                '_wporg_meta_key',
-                $_POST['wporg_field']
-            );
-        }
+    if (array_key_exists('embarque', $_POST)) {
+        update_post_meta(
+            $post_id,
+            'embarque',
+            $_POST['embarque']
+        );
+    }
+    if (array_key_exists('onibus', $_POST)) {
+        update_post_meta(
+            $post_id,
+            'onibus',
+            $_POST['onibus']
+        );
+    }
+	if (array_key_exists('iframe', $_POST)) {
+        update_post_meta(
+            $post_id,
+            'iframe',
+            $_POST['iframe']
+        );
     }
 
-    public static function html($post)
-    {
-        $value = get_post_meta($post->ID, '_wporg_meta_key', true);
-        ?>
-        <label for="itinerario_tipo">Tipo</label>
-        <select name="itinerario_tipo" id="itinerario_tipo" class="postbox">
-            <option value="">--Selecione--</option>
-            <option value="1" <?php selected($value, 'PARTIDA'); ?>>PARTIDA</option>
-            <option value="2" <?php selected($value, 'RETORNO'); ?>>RETORNO</option>
-        </select>
-        <a href="#" class="adicionar">Adicionar</a>
-        <script>
-        	jQuery('.adicionar').on('click',function(){
-        		alert('teste');
-        	})
-        </script>
-        <?php
+    if (array_key_exists('horariop', $_POST)) {
+        update_post_meta(
+            $post_id,
+            'horariop',
+            $_POST['horariop']
+        );
+    }
+    if (array_key_exists('destinop', $_POST)) {
+        update_post_meta(
+            $post_id,
+            'destinop',
+            $_POST['destinop']
+        );
+    }
+
+    if (array_key_exists('horarior', $_POST)) {
+        update_post_meta(
+            $post_id,
+            'horarior',
+            $_POST['horarior']
+        );
+    }
+    if (array_key_exists('destinor', $_POST)) {
+        update_post_meta(
+            $post_id,
+            'destinor',
+            $_POST['destinor']
+        );
     }
 }
-
-add_action('add_meta_boxes', ['WPOrg_Meta_Box', 'add']);
-add_action('save_post', ['WPOrg_Meta_Box', 'save']);
+add_action('save_post', 'wporg_save_postdata');
 
 /**
  * Implement the Custom Header feature.

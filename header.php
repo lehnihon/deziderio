@@ -81,26 +81,15 @@
                                 <li class="menu-item-has-children">
                                     <a itemprop="url"  title="">Todas as Linhas</a>
                                     <ul>
-                                        <li><a itemprop="url" href="<?php echo home_url( '/alphaville1' ); ?>" title="">Alphaville 1</a></li>
-                                        <li><a itemprop="url" href="<?php echo home_url( '/alphaville2' ); ?>" title="">Alphaville 2</a></li>
-                                        <li><a itemprop="url" href="<?php echo home_url( '/alphaville3' ); ?>" title="">Alphaville 3</a></li>
-                                        <li><a itemprop="url" href="<?php echo home_url( '/alphaville4' ); ?>" title="">Alphaville 4</a></li>
-                                        <li><a itemprop="url" href="<?php echo home_url( '/barra-funda-sumare1' ); ?>" title="">Barra Funda / Sumaré 1</a></li>
-                                        <li><a itemprop="url" href="<?php echo home_url( '/barra-funda-sumare2' ); ?>" title="">Barra Funda / Sumaré 2</a></li>
-                                        <li><a itemprop="url" href="<?php echo home_url( '/berrini' ); ?>" title="">Berrini</a></li>
-                                        <li><a itemprop="url" href="<?php echo home_url( '/berrini-dumas' ); ?>" title="">Berrini Dumas</a></li>
-                                        <li><a itemprop="url" href="<?php echo home_url( '/berrini-interlagos' ); ?>" title="">Berrini Interlagos</a></li>
-                                        <li><a itemprop="url" href="<?php echo home_url( '/centro-empresarial1' ); ?>" title="">Centro Empresarial 1</a></li>
-                                        <li><a itemprop="url" href="<?php echo home_url( '/centro-empresarial2' ); ?>" title="">Centro Empresarial 2</a></li>
-                                        <li><a itemprop="url" href="<?php echo home_url( '/centro-empresarial3' ); ?>" title="">Centro Empresarial 3</a></li>
-                                        <li><a itemprop="url" href="<?php echo home_url( '/cidade-jardim' ); ?>" title="">Cidade Jardim</a></li>
-                                        <li><a itemprop="url" href="<?php echo home_url( '/congonhas-moema' ); ?>" title="">Congonhas Moema</a></li>
-                                        <li><a itemprop="url" href="<?php echo home_url( '/integracao' ); ?>" title="">Integração</a></li>
-                                        <li><a itemprop="url" href="<?php echo home_url( '/interlagos1' ); ?>" title="">Interlagos 1</a></li>
-                                        <li><a itemprop="url" href="<?php echo home_url( '/interlagos2' ); ?>" title="">Interlagos 2</a></li>
-                                        <li><a itemprop="url" href="<?php echo home_url( '/shopping-morumbi' ); ?>" title="">Shopping Morumbi</a></li>
-                                        <li><a itemprop="url" href="<?php echo home_url( '/sorocaba-jundiai' ); ?>" title="">Sorocaba Jundiaí</a></li>
-                                        <li><a itemprop="url" href="<?php echo home_url( '/unip-shopping-morumbi' ); ?>" title="">UNIP / Shopping Morumbi</a></li>
+                                        <?php 
+                                        $args = array('orderby' => 'title','order' => 'ASC','post_type' => 'itinerario');
+                                        $query = new WP_Query( $args ); 
+                                        ?>
+                                        <?php if ( $query->have_posts() ) : ?>
+                                            <?php while ( $query->have_posts() ) : $query->the_post(); ?>
+                                                <li><a itemprop="url" href="<?php the_permalink(); ?>" title=""><?php the_title(); ?></a></li>
+                                            <?php endwhile; ?>
+                                        <?php endif; ?>
                                     </ul>
                                 </li>
                             </ul>
