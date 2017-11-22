@@ -41,7 +41,7 @@ $destinor = get_post_meta($post->ID, 'destinor', true);
 										 <div class="share-it">
 													
 													
-													<a href="book-now.html" itemprop="url" class="theme-btn" title=""><i class="fa fa-download"></i>DOWNLOAD PDF</a>
+													<a target="_blank" href="<?php echo home_url( '/pdf/?pdf=' ).$post->ID; ?>" itemprop="url" class="theme-btn" title=""><i class="fa fa-download"></i>DOWNLOAD PDF</a>
 													
 												</div>
 											<h1 itemprop="headline">Tabela Horários e Rotas</h1>

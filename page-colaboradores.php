@@ -18,7 +18,7 @@
 							<div class="members-area top-margin">
 								<div class="member clicked">
 									<div class="member-thumb">
-										<img src="images/resource/team1.jpg" alt="" itemprop="image" />
+										<img src="<?php echo dirname( get_bloginfo('stylesheet_url'))?>/images/resource/team1.jpg" alt="" itemprop="image" />
 										<div class="member-info">
 											<span>Presidente</span>
 											<h4><a title="" itemprop="url">LUIZ CLÁUDIO</a></h4>
@@ -40,7 +40,7 @@
 
 								<div class="member">
 									<div class="member-thumb">
-										<img src="images/resource/sujeito.jpg" alt="" itemprop="image" />
+										<img src="<?php echo dirname( get_bloginfo('stylesheet_url'))?>/images/resource/sujeito.jpg" alt="" itemprop="image" />
 										<div class="member-info">
 											<span>Assistente Geral</span>
 											<h4><a title="" itemprop="url">Jessica Da Silva</a></h4>
@@ -62,7 +62,7 @@
 
 								<div class="member">
 									<div class="member-thumb">
-										<img src="images/resource/sujeito.jpg" alt="" itemprop="image" />
+										<img src="<?php echo dirname( get_bloginfo('stylesheet_url'))?>/images/resource/sujeito.jpg" alt="" itemprop="image" />
 										<div class="member-info">
 											<span>Coodernador</span>
 											<h4><a  title="" itemprop="url">Márcio Rodrigues</a></h4>
@@ -86,7 +86,7 @@
 							<div class="members-area">
 								<div class="member clicked">
 									<div class="member-thumb">
-										<img src="images/resource/sujeito.jpg" alt="" itemprop="image" />
+										<img src="<?php echo dirname( get_bloginfo('stylesheet_url'))?>/images/resource/sujeito.jpg" alt="" itemprop="image" />
 										<div class="member-info">
 											<span>Coordenadora</span>
 											<h4><a  title="" itemprop="url">Sandra Di Maria</a></h4>
@@ -108,7 +108,7 @@
 
 								<div class="member">
 									<div class="member-thumb">
-										<img src="images/resource/sujeito.jpg" alt="" itemprop="image" />
+										<img src="<?php echo dirname( get_bloginfo('stylesheet_url'))?>/images/resource/sujeito.jpg" alt="" itemprop="image" />
 										<div class="member-info">
 											<span>Coordenador</span>
 											<h4><a  title="" itemprop="url">Luan</a></h4>
@@ -130,7 +130,7 @@
 
 								<div class="member">
 									<div class="member-thumb">
-										<img src="images/resource/sujeito.jpg" alt="" itemprop="image" />
+										<img src="<?php echo dirname( get_bloginfo('stylesheet_url'))?>/images/resource/sujeito.jpg" alt="" itemprop="image" />
 										<div class="member-info">
 											<span>Coodenador</span>
 											<h4><a title="" itemprop="url">Thiago dos Santos</a></h4>
@@ -163,7 +163,7 @@
 			<div class="modal-dialog" role="document">
 				<div class="modal-content">
 					<div class="modal-body">
-						<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true"><img src="images/close.png" alt="" itemprop="image" /></span></button>
+						<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true"><img src="<?php echo dirname( get_bloginfo('stylesheet_url'))?>/images/close.png" alt="" itemprop="image" /></span></button>
 						<div class="region-detail">
 							<div class="row">
 								<div class="col-md-6 column">
@@ -195,7 +195,7 @@
 								</div>
 								<div class="col-md-6 column">
 									<div class="loc-thumb">
-										<img src="images/resource/contact.jpg" alt="" itemprop="image" />
+										<img src="<?php echo dirname( get_bloginfo('stylesheet_url'))?>/images/resource/contact.jpg" alt="" itemprop="image" />
 										<p>Lorem Ipsum dolor sit amet, consectetuer adipiscing elit. Aennean commodo enean dolor sit amet, consectetuer.</p>
 										<a class="theme-btn" href="team2.html#" title="" itemprop="url">CONTACT US NOW</a>
 									</div>
@@ -212,7 +212,7 @@
 			<div class="modal-content">
 				<div class="modal-body">
 					<div class="submission-data">
-						<span><img src="images/resource/submission.png" alt="" /></span>
+						<span><img src="<?php echo dirname( get_bloginfo('stylesheet_url'))?>/images/resource/submission.png" alt="" /></span>
 						<h1>SUBMISSION SUCCESSFUL</h1>
 						<p>Thank You For Your Booking With Unload. We Have Sent you a Message Shortly.</p>
 						<a href="team2.html#" title="" class="theme-btn" data-dismiss="modal" aria-label="Close"><i class="fa fa-paper-plane"></i>BACK TO MAIN</a>

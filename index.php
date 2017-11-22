@@ -242,13 +242,10 @@ get_header(); ?>
                         <div class="blog-sec">
                             <div class="row">
 								<?php 
-								$paged = ( get_query_var( 'paged' ) ) ? absint( get_query_var( 'paged' ) ) : 1;
 
 								$args = array(
-									'posts_per_page' => 10,
 								    'orderby' => 'post_date',
-								    'order' => 'DESC',
-								    'paged' => $paged);
+								    'order' => 'DESC');
 								$query = new WP_Query( $args ); 
 								?>	
 

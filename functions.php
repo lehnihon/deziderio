@@ -229,7 +229,8 @@ function wporg_custom_box_html($post)
 			?>
 			<div style="width:100%; margin-right:20px">
 				<input style="float:left; width:20%; padding:10px" type="text" name="horariop[]" value="<?php echo $v ?>" placeholder="Horário P">
-				<input style="float:left; width:70%; padding:10px" type="text" name="destinop[]" value="<?php echo $destinop[$i] ?>" placeholder="Destino P">
+				<input style="float:left; width:60%; padding:10px" type="text" name="destinop[]" value="<?php echo $destinop[$i] ?>" placeholder="Destino P">
+				<a class="remover" href="#" style="float:left; text-decoration:none; padding:10px; display:block; width:10%; text-align:center; border:2px solid red;color:red">X</a>
 			</div>
 			<?php
 			endforeach;
@@ -243,7 +244,8 @@ function wporg_custom_box_html($post)
 			?>
 			<div style="width:100%; margin-right:20px">
 				<input style="float:left; width:20%; padding:10px" type="text" name="horarior[]" value="<?php echo $v ?>" placeholder="Horário P">
-				<input style="float:left; width:70%; padding:10px" type="text" name="destinor[]" value="<?php echo $destinor[$i] ?>" placeholder="Destino P">
+				<input style="float:left; width:60%; padding:10px" type="text" name="destinor[]" value="<?php echo $destinor[$i] ?>" placeholder="Destino P">
+				<a class="remover" href="#" style="float:left; text-decoration:none; padding:10px; display:block; width:10%; text-align:center; border:2px solid red;color:red">X</a>
 			</div>
 			<?php
 			endforeach;
@@ -255,11 +257,17 @@ function wporg_custom_box_html($post)
 		jQuery(document).ready(function(){
 
 		    jQuery('.partida').on('click',function(){
-		    	jQuery('.cpartida').append('<div style="width:100%; margin-right:20px"><input style="float:left; width:20%; padding:10px" type="text" name="horariop[]" placeholder="Horário P"><input style="float:left; width:70%; padding:10px" type="text" name="destinop[]" placeholder="Destino P"></div>');
-		    }); 
+		    	jQuery('.cpartida').append('<div style="width:100%; margin-right:20px"><input style="float:left; width:20%; padding:10px" type="text" name="horariop[]" placeholder="Horário P"><input style="float:left; width:60%; padding:10px" type="text" name="destinop[]" placeholder="Destino P"><a class="remover" href="#" style="float:left; text-decoration:none; padding:10px; display:block; width:10%; text-align:center; border:2px solid red;color:red">X</a></div>');
+		    });
 		    jQuery('.retorno').on('click',function(){
-		    	jQuery('.cretorno').append('<div style="width:100%; margin-right:20px"><input style="float:left; width:20%; padding:10px" type="text" name="horarior[]" placeholder="Horário R"><input style="float:left; width:70%; padding:10px" type="text" name="destinor[]" placeholder="Destino R"></div>');
-		    }); 
+		    	jQuery('.cretorno').append('<div style="width:100%; margin-right:20px"><input style="float:left; width:20%; padding:10px" type="text" name="horarior[]" placeholder="Horário R"><input style="float:left; width:60%; padding:10px" type="text" name="destinor[]" placeholder="Destino R"><a class="remover" href="#" style="float:left; text-decoration:none; padding:10px; display:block; width:10%; text-align:center; border:2px solid red;color:red">X</a></div>');
+		    });
+		    jQuery('.cpartida').on('click','.remover',function(){
+		    	jQuery(this).parent().remove();
+		    });
+		    jQuery('.cretorno').on('click','.remover',function(){
+		    	jQuery(this).parent().remove();
+		    });
 		});
 	</script>
     <?php
