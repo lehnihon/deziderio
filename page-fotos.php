@@ -18,37 +18,37 @@
 						<div class="gallery5">
 							<div class="gallery5-carousel" id="gallery5-carousel">
 								<div class="gallery5-img" data-hash="one">
-									<img src="images/resource/foto1.jpg" alt="" itemprop="image" />
+									<img src="<?php echo dirname( get_bloginfo('stylesheet_url'))?>/images/resource/foto1.jpg" alt="" itemprop="image" />
 									<div class="gallery-detail gallery-detail1">
 										<h3>Encontro com motoristas</h3>
 									</div>
 								</div>
 								<div class="gallery5-img" data-hash="two">
-									<img src="images/resource/foto2.jpg" alt="" itemprop="image" />
+									<img src="<?php echo dirname( get_bloginfo('stylesheet_url'))?>/images/resource/foto2.jpg" alt="" itemprop="image" />
 									<div class="gallery-detail gallery-detail1">
 										<h3>Almoço com motoristas em Alphaville</h3>
 									</div>
 								</div>
 								<div class="gallery5-img" data-hash="three">
-									<img src="images/resource/foto3.jpg" alt="" itemprop="image" />
+									<img src="<?php echo dirname( get_bloginfo('stylesheet_url'))?>/images/resource/foto3.jpg" alt="" itemprop="image" />
 									<div class="gallery-detail gallery-detail1">
 										<h3>Viagem a Minas Gerais</h3>
 									</div>
 								</div>
 								<div class="gallery5-img" data-hash="four">
-									<img src="images/resource/foto1.jpg" alt="" itemprop="image" />
+									<img src="<?php echo dirname( get_bloginfo('stylesheet_url'))?>/images/resource/foto1.jpg" alt="" itemprop="image" />
 									<div class="gallery-detail gallery-detail1">
 										<h3>Encontro com motoristas</h3>
 									</div>
 								</div>
 								<div class="gallery5-img" data-hash="five">
-									<img src="images/resource/foto2.jpg" alt="" itemprop="image" />
+									<img src="<?php echo dirname( get_bloginfo('stylesheet_url'))?>/images/resource/foto2.jpg" alt="" itemprop="image" />
 									<div class="gallery-detail gallery-detail1">
 										<h3>Almoço com motoristas em Alphaville</h3>
 									</div>
 								</div>
 								<div class="gallery5-img" data-hash="six">
-									<img src="images/resource/foto3.jpg" alt="" itemprop="image" />
+									<img src="<?php echo dirname( get_bloginfo('stylesheet_url'))?>/images/resource/foto3.jpg" alt="" itemprop="image" />
 									<div class="gallery-detail gallery-detail1">
 										<h3>Viagem a Minas Gerais</h3>
 									</div>
@@ -59,7 +59,7 @@
 									<div class="col-md-2">
 										<div class="gallery5-thumb clicked">
 											<a class="secondary url" href="fotos.html#one" title="" itemprop="url">
-												<img src="images/resource/foto1a.jpg" alt="" itemprop="image" />
+												<img src="<?php echo dirname( get_bloginfo('stylesheet_url'))?>/images/resource/foto1a.jpg" alt="" itemprop="image" />
 												<i class="fa fa-plus"></i>
 											</a>
 										</div>
@@ -68,7 +68,7 @@
 									<div class="col-md-2">
 										<div class="gallery5-thumb">
 											<a class="secondary url" href="fotos.html#two" title="" itemprop="url">
-												<img src="images/resource/foto2a.jpg" alt="" itemprop="image" />
+												<img src="<?php echo dirname( get_bloginfo('stylesheet_url'))?>/images/resource/foto2a.jpg" alt="" itemprop="image" />
 												<i class="fa fa-plus"></i>
 											</a>
 										</div>
@@ -77,7 +77,7 @@
 									<div class="col-md-2">
 										<div class="gallery5-thumb">
 											<a class="secondary url" href="fotos.html#three" title="" itemprop="url">
-												<img src="images/resource/foto3a.jpg" alt="" itemprop="image" />
+												<img src="<?php echo dirname( get_bloginfo('stylesheet_url'))?>/images/resource/foto3a.jpg" alt="" itemprop="image" />
 												<i class="fa fa-plus"></i>
 											</a>
 										</div>
@@ -86,7 +86,7 @@
 									<div class="col-md-2">
 										<div class="gallery5-thumb">
 											<a class="secondary url" href="fotos.html#four" title="" itemprop="url">
-												<img src="images/resource/foto1a.jpg" alt="" itemprop="image" />
+												<img src="<?php echo dirname( get_bloginfo('stylesheet_url'))?>/images/resource/foto1a.jpg" alt="" itemprop="image" />
 												<i class="fa fa-plus"></i>
 											</a>
 										</div>
@@ -95,7 +95,7 @@
 									<div class="col-md-2">
 										<div class="gallery5-thumb">
 											<a class="secondary url" href="fotos.html#five" title="" itemprop="url">
-												<img src="images/resource/foto2a.jpg" alt="" itemprop="image" />
+												<img src="<?php echo dirname( get_bloginfo('stylesheet_url'))?>/images/resource/foto2a.jpg" alt="" itemprop="image" />
 												<i class="fa fa-plus"></i>
 											</a>
 										</div>
@@ -104,7 +104,7 @@
 									<div class="col-md-2">
 										<div class="gallery5-thumb">
 											<a class="secondary url" href="fotos.html#six" title="" itemprop="url">
-												<img src="images/resource/foto3a.jpg" alt="" itemprop="image" />
+												<img src="<?php echo dirname( get_bloginfo('stylesheet_url'))?>/images/resource/foto3a.jpg" alt="" itemprop="image" />
 												<i class="fa fa-plus"></i>
 											</a>
 										</div>
@@ -125,7 +125,7 @@
 			<div class="modal-content">
 				<div class="modal-body">
 					<div class="submission-data">
-						<span><img src="images/resource/submission.png" alt="" /></span>
+						<span><img src="<?php echo dirname( get_bloginfo('stylesheet_url'))?>/images/resource/submission.png" alt="" /></span>
 						<h1>SUBMISSION SUCCESSFUL</h1>
 						<p>Thank You For Your Booking With Unload. We Have Sent you a Message Shortly.</p>
 						<a href="gallery5.html#" title="" class="theme-btn" data-dismiss="modal" aria-label="Close"><i class="fa fa-paper-plane"></i>BACK TO MAIN</a>

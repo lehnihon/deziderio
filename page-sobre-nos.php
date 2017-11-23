@@ -31,7 +31,7 @@
 												<div class="col-md-6">
 													<div class="simple-services1">
 														<div class="service-box1">
-															<img src="images/resource/icone-onibus2.png" alt="" />
+															<img src="<?php echo dirname( get_bloginfo('stylesheet_url'))?>/images/resource/icone-onibus2.png" alt="" />
 															<h5 class="counter">20</h5>
 															<span>LINHAS ATIVAS</span>
 														</div>
@@ -41,7 +41,7 @@
 												<div class="col-md-6">
 													<div class="simple-services1">
 														<div class="service-box1">
-															<img src="images/resource/icone-passageiro2.png" alt="" />
+															<img src="<?php echo dirname( get_bloginfo('stylesheet_url'))?>/images/resource/icone-passageiro2.png" alt="" />
 															<h5 class="counter">800</h5>
 															<span>PASSAGEIROS</span>
 														</div>
@@ -54,7 +54,7 @@
 								</div>
 								<div class="col-md-6">
 									<div class="about-shipment-thumb">
-										<img src="images/resource/cartao-deziderio.png" alt="" itemprop="image" />
+										<img src="<?php echo dirname( get_bloginfo('stylesheet_url'))?>/images/resource/cartao-deziderio.png" alt="" itemprop="image" />
 									</div>
 								</div>
 							</div>
@@ -79,9 +79,9 @@
 								<div class="row">
 									<div class="col-md-4">
 										<div class="post-style2">
-											<span><img src="images/resource/post-thumb2-1.jpg" alt="" itemprop="image" /></span>
+											<span><img src="<?php echo dirname( get_bloginfo('stylesheet_url'))?>/images/resource/post-thumb2-1.jpg" alt="" itemprop="image" /></span>
 											<div class="post-info2">
-												<i><img src="images/resource/101.png" alt="" itemprop="image"></i>
+												<i><img src="<?php echo dirname( get_bloginfo('stylesheet_url'))?>/images/resource/101.png" alt="" itemprop="image"></i>
 												<h4><a href="about.html#" title="" itemprop="url">ATENDIMENTO</a></h4>
 												<span>Não importa se for apenas uma viagem ou fretamento diário, a DEZIDÉRIO TRANSPORTE conta com uma frota moderna totalmente assegurada, e, com profissionais capacitados para lhe atender com rapidez e qualidade.</span>
 											</div>
@@ -90,9 +90,9 @@
 
 									<div class="col-md-4">
 										<div class="post-style2">
-											<span><img src="images/resource/post-thumb2-2.jpg" alt="" itemprop="image" /></span>
+											<span><img src="<?php echo dirname( get_bloginfo('stylesheet_url'))?>/images/resource/post-thumb2-2.jpg" alt="" itemprop="image" /></span>
 											<div class="post-info2">
-												<i><img src="images/resource/102.png" alt="" itemprop="image"></i>
+												<i><img src="<?php echo dirname( get_bloginfo('stylesheet_url'))?>/images/resource/102.png" alt="" itemprop="image"></i>
 												<h4><a href="about.html#" title="" itemprop="url">PONTUALIDADE</a></h4>
 												<span>Sempre prezamos por pontualidade. Chegar no horário combinado é prioridade para o nosso time de profissionais. Assim garantimos aos nossos clientes tranquilidade no embarque e desembarque.</span>
 											</div>
@@ -101,9 +101,9 @@
 
 									<div class="col-md-4">
 										<div class="post-style2">
-											<span><img src="images/resource/post-thumb2-3.jpg" alt="" itemprop="image" /></span>
+											<span><img src="<?php echo dirname( get_bloginfo('stylesheet_url'))?>/images/resource/post-thumb2-3.jpg" alt="" itemprop="image" /></span>
 											<div class="post-info2">
-												<i><img src="images/resource/103.png" alt="" itemprop="image"></i>
+												<i><img src="<?php echo dirname( get_bloginfo('stylesheet_url'))?>/images/resource/103.png" alt="" itemprop="image"></i>
 												<h4><a href="about.html#" title="" itemprop="url">PROFISIONALISMO</a></h4>
 												<span>Procuramos sempre inovar a infra-estrutura da empresa. Investindo em nossos profissionais, assegurando nossos veículos, e proporcionando tecnologia de ponta, Wi-Fi, APP, tudo isso muito mais.</span>
 											</div>
@@ -124,7 +124,7 @@
 			<div class="modal-content">
 				<div class="modal-body">
 					<div class="submission-data">
-						<span><img src="images/resource/submission.png" alt="" /></span>
+						<span><img src="<?php echo dirname( get_bloginfo('stylesheet_url'))?>/images/resource/submission.png" alt="" /></span>
 						<h1>SUBMISSION SUCCESSFUL</h1>
 						<p>Thank You For Your Booking With Unload. We Have Sent you a Message Shortly.</p>
 						<a href="about.html#" title="" class="theme-btn" data-dismiss="modal" aria-label="Close"><i class="fa fa-paper-plane"></i>BACK TO MAIN</a>

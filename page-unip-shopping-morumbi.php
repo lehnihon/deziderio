@@ -452,7 +452,7 @@ Colonia)</td>
 			<div class="modal-content">
 				<div class="modal-body">
 					<div class="submission-data">
-						<span><img src="images/resource/submission.png" alt="" /></span>
+						<span><img src="<?php echo dirname( get_bloginfo('stylesheet_url'))?>/images/resource/submission.png" alt="" /></span>
 						<h1>SUBMISSION SUCCESSFUL</h1>
 						<p>Thank You For Your Booking With Unload. We Have Sent you a Message Shortly.</p>
 						<a href="blog-detail-no-sidebar.html#" title="" class="theme-btn" data-dismiss="modal" aria-label="Close"><i class="fa fa-paper-plane"></i>BACK TO MAIN</a>

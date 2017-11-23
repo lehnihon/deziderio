@@ -69,6 +69,7 @@ function site_scripts() {
 	wp_enqueue_style( 'site-style-carousel', get_template_directory_uri() ."/css/owl.carousel.css" );
 	wp_enqueue_style( 'site-style-icons', get_template_directory_uri() ."/css/icons.css" );
 	wp_enqueue_style( 'site-style-select', get_template_directory_uri() ."/css/select2.min.css" );
+	wp_enqueue_style( 'site-style-circlifull', get_template_directory_uri() ."/css/jquery.circliful.css" );
 	wp_enqueue_style( 'site-style-scrollbar', get_template_directory_uri() ."/css/perfect-scrollbar.css" );
 	wp_enqueue_style( 'site-style-default', get_template_directory_uri() ."/css/style.css" );
 	wp_enqueue_style( 'site-style-responsive', get_template_directory_uri() ."/css/responsive.css" );
@@ -85,6 +86,7 @@ function site_scripts() {
 	wp_enqueue_script( 'site-script-select2', get_template_directory_uri() . '/js/select2.full.js',array(),false,true);
 	wp_enqueue_script( 'site-script-counterup', get_template_directory_uri() . '/js/jquery.counterup.min.js',array(),false,true);
 	wp_enqueue_script( 'site-script-waypoints', get_template_directory_uri() . '/js/waypoints.js',array(),false,true);
+	wp_enqueue_script( 'site-script-circliful', get_template_directory_uri() . '/js/jquery.circliful.min.js',array(),false,true);
 	wp_enqueue_script( 'site-script-pscrollbar', get_template_directory_uri() . '/js/perfect-scrollbar.js',array(),false,true);
 	wp_enqueue_script( 'site-script-pscrollbarjquery', get_template_directory_uri() . '/js/perfect-scrollbar.jquery.js',array(),false,true);
 	wp_enqueue_script( 'site-script-mapsapi', 'https://maps.googleapis.com/maps/api/js',array(),false,true);

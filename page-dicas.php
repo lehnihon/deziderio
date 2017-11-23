@@ -22,13 +22,13 @@
 
                                         <div class="blog-post">
                                             <div class="post-thumb">
-                                                <img src="images/resource/post-thumb2.jpg" alt="" />
+                                                <img src="<?php echo dirname( get_bloginfo('stylesheet_url'))?>/images/resource/post-thumb2.jpg" alt="" />
                                               
                                             </div>
                                             <div class="post-info">
                                                 <ul class="avatar">
                                                     <li>
-                                                        <span><img src="images/resource/avatar.png" alt="" /></span>
+                                                        <span><img src="<?php echo dirname( get_bloginfo('stylesheet_url'))?>/images/resource/avatar.png" alt="" /></span>
                                                         <a href="sobre-nos.html" title="">Equipe Dezidério</a>
                                                     </li>
                                                     <li>
@@ -48,13 +48,13 @@
 
                                         <div class="blog-post">
                                             <div class="post-thumb">
-                                                <img src="images/resource/post-thumb3.jpg" alt="" />
+                                                <img src="<?php echo dirname( get_bloginfo('stylesheet_url'))?>/images/resource/post-thumb3.jpg" alt="" />
                                              
                                             </div>
                                               <div class="post-info">
                                                 <ul class="avatar">
                                                     <li>
-                                                        <span><img src="images/resource/avatar.png" alt="" /></span>
+                                                        <span><img src="<?php echo dirname( get_bloginfo('stylesheet_url'))?>/images/resource/avatar.png" alt="" /></span>
                                                         <a href="sobre-nos.html" title="">Equipe Dezidério</a>
                                                     </li>
                                                     <li>
@@ -74,13 +74,13 @@
 
                                         <div class="blog-post">
                                             <div class="post-thumb">
-                                                <img src="images/resource/post-thumb4.jpg" alt="" />
+                                                <img src="<?php echo dirname( get_bloginfo('stylesheet_url'))?>/images/resource/post-thumb4.jpg" alt="" />
                                                
                                             </div>
                                              <div class="post-info">
                                                 <ul class="avatar">
                                                     <li>
-                                                        <span><img src="images/resource/avatar.png" alt="" /></span>
+                                                        <span><img src="<?php echo dirname( get_bloginfo('stylesheet_url'))?>/images/resource/avatar.png" alt="" /></span>
                                                         <a href="sobre-nos.html" title="">Equipe Dezidério</a>
                                                     </li>
                                                     <li>
@@ -108,9 +108,9 @@
                                         </div><!-- Heading4 -->
                                         <div class="widget-data">
                                             <div class="post-box">
-                                                <img alt="" src="images/resource/recent-widget-bg1.jpg">
+                                                <img alt="" src="<?php echo dirname( get_bloginfo('stylesheet_url'))?>/images/resource/recent-widget-bg1.jpg">
                                                 <div class="recent-news-thumb">
-                                                    <img itemprop="image" src="images/resource/recent-news-widget1.jpg" alt="">
+                                                    <img itemprop="image" src="<?php echo dirname( get_bloginfo('stylesheet_url'))?>/images/resource/recent-news-widget1.jpg" alt="">
                                                 </div>
                                                 <div class="recent-news-desc">
                                                     <ul class="post-meta2">
@@ -120,9 +120,9 @@
                                                 </div>
                                             </div>
                                             <div class="post-box">
-                                                <img alt="" src="images/resource/recent-widget-bg2.jpg">
+                                                <img alt="" src="<?php echo dirname( get_bloginfo('stylesheet_url'))?>/images/resource/recent-widget-bg2.jpg">
                                                 <div class="recent-news-thumb">
-                                                    <img itemprop="image" src="images/resource/recent-news-widget2.jpg" alt="">
+                                                    <img itemprop="image" src="<?php echo dirname( get_bloginfo('stylesheet_url'))?>/images/resource/recent-news-widget2.jpg" alt="">
                                                 </div>
                                                 <div class="recent-news-desc">
                                                     <ul class="post-meta2">
@@ -173,7 +173,7 @@
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
                     <div class="modal-body">
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true"><img src="images/close.png" alt="" itemprop="image" /></span></button>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true"><img src="<?php echo dirname( get_bloginfo('stylesheet_url'))?>/images/close.png" alt="" itemprop="image" /></span></button>
                         <div class="region-detail">
                             <div class="row">
                                 <div class="col-md-6 column">
@@ -205,7 +205,7 @@
                                 </div>
                                 <div class="col-md-6 column">
                                     <div class="loc-thumb post-thumb">
-                                        <img src="images/resource/contact.jpg" alt="" itemprop="image" />
+                                        <img src="<?php echo dirname( get_bloginfo('stylesheet_url'))?>/images/resource/contact.jpg" alt="" itemprop="image" />
                                         <span><i class="fa fa-map-marker"></i></span>
                                         <div id="google_map5" class="google-map">
                                         </div><!-- Google Map -->
@@ -229,7 +229,7 @@
             <div class="modal-content">
                 <div class="modal-body">
                     <div class="submission-data">
-                        <span><img src="images/resource/submission.png" alt="" /></span>
+                        <span><img src="<?php echo dirname( get_bloginfo('stylesheet_url'))?>/images/resource/submission.png" alt="" /></span>
                         <h1>SUBMISSION SUCCESSFUL</h1>
                         <p>Thank You For Your Booking With Unload. We Have Sent you a Message Shortly.</p>
                         <a href="events.html#" title="" class="theme-btn" data-dismiss="modal" aria-label="Close"><i class="fa fa-paper-plane"></i>BACK TO MAIN</a>
