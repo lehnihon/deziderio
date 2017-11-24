@@ -21,7 +21,7 @@
                                     <h2>Boleto disponível do mês de Novembro de 2017</h2>
                                     <span>Boleto já foi enviando para o email cadastrado, caso não tenha recebido favor entrar em contato ou acessar pelo nosso aplicativo.</span>
                                 </div>
-                                <a href="contato.html" title=""><i class="fa fa-paper-plane"></i>SOLICITAR BOLETO</a>
+                                <a href="<?php echo home_url( '/contato' ); ?>" title=""><i class="fa fa-paper-plane"></i>SOLICITAR BOLETO</a>
                             </div>
                          
                          
@@ -31,7 +31,7 @@
                                     <h2>Informativo de Reajuste de Mesalidade 2017</h2>
                                     <span>Caso nnao tenha recebido seu infomrativo sobre o reajuste da mensalidade ano 2017favor solicitar para nossa equipe, informando seus dados</span>
                                 </div>
-                                <a href="contato.html" title=""><i class="fa fa-paper-plane"></i>SOLICITAR REAJUSTE</a>
+                                <a href="<?php echo home_url( '/contato' ); ?>" title=""><i class="fa fa-paper-plane"></i>SOLICITAR REAJUSTE</a>
                             </div>
                             <div class="callus1 callus-action">
                                 <div class="callus-content">
@@ -39,7 +39,7 @@
                                     <h2>Novo Serviço: TRNSPORTE EXECUTIVO</h2>
                                     <span>Para aeroportos, translado e outros... Disponibilizamos carros executivos e van. Reserve atraves de email: assuex@terra.com.br.</span>
                                 </div>
-                                <a href="transporte-executivo.html" title=""><i class="fa fa-paper-plane"></i>DETALHES DO SERVIÇO</a>
+                                <a href="<?php echo home_url( '/transporte-executivo' ); ?>" title=""><i class="fa fa-paper-plane"></i>DETALHES DO SERVIÇO</a>
                             </div>
                         </div>
                     </div>

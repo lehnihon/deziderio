@@ -58,7 +58,7 @@
 								<div class="row">
 									<div class="col-md-2">
 										<div class="gallery5-thumb clicked">
-											<a class="secondary url" href="fotos.html#one" title="" itemprop="url">
+											<a class="secondary url" href="#one" title="" itemprop="url">
 												<img src="<?php echo dirname( get_bloginfo('stylesheet_url'))?>/images/resource/foto1a.jpg" alt="" itemprop="image" />
 												<i class="fa fa-plus"></i>
 											</a>
@@ -67,7 +67,7 @@
 
 									<div class="col-md-2">
 										<div class="gallery5-thumb">
-											<a class="secondary url" href="fotos.html#two" title="" itemprop="url">
+											<a class="secondary url" href="#two" title="" itemprop="url">
 												<img src="<?php echo dirname( get_bloginfo('stylesheet_url'))?>/images/resource/foto2a.jpg" alt="" itemprop="image" />
 												<i class="fa fa-plus"></i>
 											</a>
@@ -76,7 +76,7 @@
 
 									<div class="col-md-2">
 										<div class="gallery5-thumb">
-											<a class="secondary url" href="fotos.html#three" title="" itemprop="url">
+											<a class="secondary url" href="#three" title="" itemprop="url">
 												<img src="<?php echo dirname( get_bloginfo('stylesheet_url'))?>/images/resource/foto3a.jpg" alt="" itemprop="image" />
 												<i class="fa fa-plus"></i>
 											</a>
@@ -85,7 +85,7 @@
 
 									<div class="col-md-2">
 										<div class="gallery5-thumb">
-											<a class="secondary url" href="fotos.html#four" title="" itemprop="url">
+											<a class="secondary url" href="#four" title="" itemprop="url">
 												<img src="<?php echo dirname( get_bloginfo('stylesheet_url'))?>/images/resource/foto1a.jpg" alt="" itemprop="image" />
 												<i class="fa fa-plus"></i>
 											</a>
@@ -94,7 +94,7 @@
 
 									<div class="col-md-2">
 										<div class="gallery5-thumb">
-											<a class="secondary url" href="fotos.html#five" title="" itemprop="url">
+											<a class="secondary url" href="#five" title="" itemprop="url">
 												<img src="<?php echo dirname( get_bloginfo('stylesheet_url'))?>/images/resource/foto2a.jpg" alt="" itemprop="image" />
 												<i class="fa fa-plus"></i>
 											</a>
@@ -103,7 +103,7 @@
 
 									<div class="col-md-2">
 										<div class="gallery5-thumb">
-											<a class="secondary url" href="fotos.html#six" title="" itemprop="url">
+											<a class="secondary url" href="#six" title="" itemprop="url">
 												<img src="<?php echo dirname( get_bloginfo('stylesheet_url'))?>/images/resource/foto3a.jpg" alt="" itemprop="image" />
 												<i class="fa fa-plus"></i>
 											</a>

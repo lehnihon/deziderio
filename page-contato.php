@@ -1,6 +1,6 @@
 <?php get_header(); ?>
         <div class="page-top blackish overlape">
-            <div class="parallax" data-velocity="-.1" style="background: url('images/parallax4.jpg') repeat scroll 0 0"></div>
+            <div class="parallax" data-velocity="-.1" style="background: url('<?php echo dirname( get_bloginfo('stylesheet_url'))?>/images/parallax4.jpg') repeat scroll 0 0"></div>
             <div class="container">
                 <div class="page-title">
                     <span>Realize aqui seu</span>

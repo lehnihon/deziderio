@@ -62,9 +62,9 @@
                     <ul>
                         <li class="menu-item-has-children"><a itemprop="url" href="<?php echo home_url( '/' ); ?>" title="">INÍCIO</a> 
                         </li>
-                        <li class="menu-item-has-children"><a itemprop="url" href="<?php echo home_url( '/sobre-nos' ); ?>" title="">SOBRE NÓS</a> 
+                        <li class="menu-item-has-children"><a itemprop="url" href="<?php echo home_url( '/colaboradores' ); ?>" title="">SOBRE NÓS</a> 
                         <ul>
-                        	 <li><a itemprop="url" href="colaboradores.html" title="">Nossa Equipe</a></li>                      	
+                        	 <li><a itemprop="url" href="<?php echo home_url( '/colaboradores' ); ?>" title="">Nossa Equipe</a></li>                      	
                         </ul> 
                         </li>
                         <li class="menu-item-has-children"><a itemprop="url" href="#servicos" title="">SERVIÇOS</a>

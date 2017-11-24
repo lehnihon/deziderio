@@ -24,10 +24,9 @@
 											<h2>OUTROS SERVIÇOS</h2>
 										</div>
 										<ul>
-											<li><a href="fretamento-eventual-continuo.html" title="" itemprop="url">Fretamento Eventual e Contínuo</a></li>
-											<li><a href="transporte-aeroportos.html" title="" itemprop="url">Transporte para Aeroportos</a></li>
-											<li><a href="transporte-executivo.html" title="" itemprop="url">Transporte Executivo</a></li>
-										
+											<li><a href="<?php echo home_url( '/transporte-executivo' ); ?>" title="" itemprop="url">Transporte Executivo</a></li>
+											<li><a href="<?php echo home_url( '/transporte-aeroportos' ); ?>" title="" itemprop="url">Transporte para Aeroportos</a></li>
+											<li><a href="<?php echo home_url( '/fretamento-eventual-continuo' ); ?>" title="" itemprop="url">Transporte Executivo</a></li>
 										</ul>
 									</div>
 								</div>
@@ -74,7 +73,7 @@
 																		<li><span>Email:</span> assuex@terra.com.br</li>
 																		<li><span>Endereço:</span> Rua Oscar Salgado de Vasconcelos, 97 - Vila Hotolandia - SP - CEP: 13214-354</li>
 																	</ul>
-																	<a class="theme-btn" href="cadastro.html" itemprop="url" title=""><i class="fa fa-paper-plane"></i>CONTRATAR</a>
+																	<a class="theme-btn" href="<?php echo home_url( '/cadastro' ); ?>" itemprop="url" title=""><i class="fa fa-paper-plane"></i>CONTRATAR</a>
 																</div>
 															</div>
 														</div>

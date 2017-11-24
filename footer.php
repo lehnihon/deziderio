@@ -31,10 +31,10 @@
                                             </div>
                                             <div class="links-widget">
                                                 <ul>
-                                                    <li><a itemprop="url" href="fretamento-eventual-continuo.html" title="">Fretamento Eventual e Contínuo</a></li>
-                                                    <li><a itemprop="url" href="transporte-executivo.html" title="">Transporte Executivo</a></li>
-                                                    <li><a itemprop="url" href="transporte-aeroportos.html" title="">Transporte para Aeroportos</a></li>
-                                                    <li><a itemprop="url" href="transporte-eventos-excursoes.html" title="">Transporte para Eventos e Excursões</a></li>
+                                                    <li><a itemprop="url" href="<?php echo home_url( '/fretamento-eventual-continuo' ); ?>" title="">Fretamento Eventual e Contínuo</a></li>
+                                                    <li><a itemprop="url" href="<?php echo home_url( '/transporte-executivo' ); ?>" title="">Transporte Executivo</a></li>
+                                                    <li><a itemprop="url" href="<?php echo home_url( '/transporte-aeroportos' ); ?>" title="">Transporte para Aeroportos</a></li>
+                                                    <li><a itemprop="url" href="<?php echo home_url( '/transporte-eventos-excursoes' ); ?>" title="">Transporte para Eventos e Excursões</a></li>
                                                     
                                                 </ul>
                                             </div>
@@ -91,11 +91,11 @@ Para se cadastrar, informe seu email!</p>
                     </div>
                     <div class="col-md-6 column">
                         <ul>
-                            <li><a itemprop="url" href="index.html" title="">INÍCIO</a></li>
-                            <li><a itemprop="url" href="sobre-nos.html" title="">SOBRE NÓS</a></li>
+                            <li><a itemprop="url" href="#" title="">INÍCIO</a></li>
+                            <li><a itemprop="url" href="<?php echo home_url( '/colaboradores' ); ?>" title="">SOBRE NÓS</a></li>
                             <li><a itemprop="url" href="#servicos" title="">SERVIÇOS</a></li>
                             <li><a itemprop="url" href="#itinerarios" title="">ITINERÁRIOS</a></li>
-                            <li><a itemprop="url" href="contato.html" title="">CONTATO</a></li>
+                            <li><a itemprop="url" href="<?php echo home_url( '/contato' ); ?>" title="">CONTATO</a></li>
                         </ul>
                     </div>
                 </div>

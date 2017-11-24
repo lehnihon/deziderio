@@ -89,7 +89,7 @@ function site_scripts() {
 	wp_enqueue_script( 'site-script-circliful', get_template_directory_uri() . '/js/jquery.circliful.min.js',array(),false,true);
 	wp_enqueue_script( 'site-script-pscrollbar', get_template_directory_uri() . '/js/perfect-scrollbar.js',array(),false,true);
 	wp_enqueue_script( 'site-script-pscrollbarjquery', get_template_directory_uri() . '/js/perfect-scrollbar.jquery.js',array(),false,true);
-	wp_enqueue_script( 'site-script-mapsapi', 'https://maps.googleapis.com/maps/api/js',array(),false,true);
+	wp_enqueue_script( 'site-script-mapsapi', 'https://maps.googleapis.com/maps/api/js?key=AIzaSyAJHHnwLor0GhLGE5LcKCEd_v2jXsP4H88',array(),false,true);
 	wp_enqueue_script( 'site-script-plugin', get_template_directory_uri() . '/js/jquery.plugin.js',array(),false,true);
 	wp_enqueue_script( 'site-script-datepick', get_template_directory_uri() . '/js/jquery.datepick.js',array(),false,true);
 	wp_enqueue_script( 'site-script', get_template_directory_uri() . '/js/script.js',array(),false,true);
@@ -128,7 +128,7 @@ function register_post_type_itinerario(){
 	$args = array(
 		'labels' => $labels,
 		'public' => true,
-        'supports' => array('title'),
+        'supports' => array('title','thumbnail'),
         'menu_position' => 5
 		);
 
@@ -187,87 +187,108 @@ function wporg_custom_box_html($post)
 	$horarior = get_post_meta($post->ID, 'horarior', true);
 	$destinor = get_post_meta($post->ID, 'destinor', true);
     ?>
-	<div style="overflow: auto;">
-	    <div style="float:left; width:33%">
-		    <input style="float:left; width:90%; padding:10px" type="text" name="coordenador" value="<?php echo $coordenador ?>" placeholder="COORDERNADOR">
-	    </div>
-	    <div style="float:left; width:33%">
-		    <input style="float:left; width:90%; padding:10px" type="text" name="telefone" value="<?php echo $telefone ?>" placeholder="TELEFONE">
-	    </div>
-	    <div style="float:left; width:33%">
-		    <input style="float:left; width:90%; padding:10px" type="text" name="embarque" value="<?php echo $embarque ?>" placeholder="EMBARQUE">
-	    </div>
-	</div>
-	<div style="overflow: auto;">
-	    <div style="float:left; width:33%">
-		    <input style="float:left; width:90%; padding:10px" type="text" name="onibus" value="<?php echo $onibus ?>" placeholder="ÔNIBUS">
-	    </div>
-	    <div style="float:left; width:33%">
-		    <input style="float:left; width:90%; padding:10px" type="text" name="iframe" value="<?php echo $iframe ?>" placeholder="MAPA">
-	    </div>
-	</div>
-    <div style="overflow: auto;">
-	    <div style="float:left; width:50%">
-		    <h2 style="font-size:18px; text-align:center; font-weight:bold; padding:10px;">PARTIDA</h2>
-	    </div>
-	    <div style="float:left; width:50%">
-		    <h2 style="font-size:18px; text-align:center; font-weight:bold; padding:10px;">RETORNO</h2>
-	    </div>
-	</div>
-    <div style="overflow: auto;">
-	    <div style="float:left; width:50%">
-		    <a class="partida" href="#" style="text-decoration:none; padding:10px; display:block; width:200px; text-align:center; border:2px solid #23282d;
-		color:#23282d">ADICIONAR PARTIDA</a>
-	    </div>
-	    <div style="float:left; width:50%">
-		    <a class="retorno" href="#" style="text-decoration:none; padding:10px; display:block; width:200px; text-align:center; border:2px solid #23282d;
-		color:#23282d">ADICIONAR RETORNO</a>
-	    </div>
-	</div><br>
-	<div class="cpartida" style="float:left; width:50%">
-		<?php
-		if(!empty($horariop)):
-			foreach($horariop as $i => $v):
-			?>
-			<div style="width:100%; margin-right:20px">
-				<input style="float:left; width:20%; padding:10px" type="text" name="horariop[]" value="<?php echo $v ?>" placeholder="Horário P">
-				<input style="float:left; width:60%; padding:10px" type="text" name="destinop[]" value="<?php echo $destinop[$i] ?>" placeholder="Destino P">
-				<a class="remover" href="#" style="float:left; text-decoration:none; padding:10px; display:block; width:10%; text-align:center; border:2px solid red;color:red">X</a>
-			</div>
+    <style>
+		@media (max-width: 991px) {  
+			#itinerariosadmin .adminaddh{
+				display: none !important;
+			}
+			#itinerariosadmin .adminadd{
+				float: none !important;
+				width: 100% !important;
+			}
+			#itinerariosadmin input[type="text"]{
+				float: none !important;
+				width: 100% !important;
+			}
+		}
+    </style>
+    <div id="itinerariosadmin">
+		<div style="overflow: auto;">
+		    <div style="float:left; width:33%">
+			    <input style="float:left; width:90%; padding:10px" type="text" name="coordenador" value="<?php echo $coordenador ?>" placeholder="COORDERNADOR">
+		    </div>
+		    <div style="float:left; width:33%">
+			    <input style="float:left; width:90%; padding:10px" type="text" name="telefone" value="<?php echo $telefone ?>" placeholder="TELEFONE">
+		    </div>
+		    <div style="float:left; width:33%">
+			    <input style="float:left; width:90%; padding:10px" type="text" name="embarque" value="<?php echo $embarque ?>" placeholder="EMBARQUE">
+		    </div>
+		</div>
+		<div style="overflow: auto;">
+		    <div style="float:left; width:33%">
+			    <input style="float:left; width:90%; padding:10px" type="text" name="onibus" value="<?php echo $onibus ?>" placeholder="ÔNIBUS">
+		    </div>
+		    <div style="float:left; width:33%">
+			    <input style="float:left; width:90%; padding:10px" type="text" name="iframe" value="<?php echo $iframe ?>" placeholder="MAPA">
+		    </div>
+		</div>
+	    <div class="adminaddh" style="overflow: auto;">
+		    <div style="float:left; width:50%">
+			    <h2 style="font-size:18px; text-align:center; font-weight:bold; padding:10px;">PARTIDA</h2>
+		    </div>
+		    <div style="float:left; width:50%">
+			    <h2 style="font-size:18px; text-align:center; font-weight:bold; padding:10px;">RETORNO</h2>
+		    </div>
+		</div>
+	    <div style="overflow: auto;">
+		    <div class="adminadd" style="float:left; width:50%">
+			    <a class="partida" href="#" style="text-decoration:none; padding:10px; display:block; width:200px; text-align:center; border:2px solid #23282d;
+			color:#23282d">ADICIONAR PARTIDA</a>
+		    </div>
+		    <div class="adminadd" style="float:left; width:50%">
+			    <a class="retorno" href="#" style="text-decoration:none; padding:10px; display:block; width:200px; text-align:center; border:2px solid #23282d;
+			color:#23282d">ADICIONAR RETORNO</a>
+		    </div>
+		</div><br>
+		<div class="cpartida" style="float:left; width:50%">
 			<?php
-			endforeach;
-		endif;
-		?>
-	</div>
-	<div class="cretorno" style="float:right; width:50%">
-		<?php
-		if(!empty($horarior)):
-			foreach($horarior as $i => $v):
+			if(!empty($horariop)):
+				foreach($horariop as $i => $v):
+				?>
+				<div style="width:100%; overflow: auto;">
+					<input style="float:left; width:20%; padding:10px" type="text" name="horariop[]" value="<?php echo $v ?>" placeholder="Horário P">
+					<input style="float:left; width:55%; padding:10px" type="text" name="destinop[]" value="<?php echo $destinop[$i] ?>" placeholder="Destino P">
+					<a class="remover" href="#" style="float:left; text-decoration:none; padding:10px; display:block; width:10%; text-align:center; border:2px solid red;color:red">X</a>
+				</div>
+				<?php
+				endforeach;
+			endif;
 			?>
-			<div style="width:100%; margin-right:20px">
-				<input style="float:left; width:20%; padding:10px" type="text" name="horarior[]" value="<?php echo $v ?>" placeholder="Horário P">
-				<input style="float:left; width:60%; padding:10px" type="text" name="destinor[]" value="<?php echo $destinor[$i] ?>" placeholder="Destino P">
-				<a class="remover" href="#" style="float:left; text-decoration:none; padding:10px; display:block; width:10%; text-align:center; border:2px solid red;color:red">X</a>
-			</div>
+		</div>
+		<div class="cretorno" style="float:right; width:50%">
 			<?php
-			endforeach;
-		endif;
-			?>
+			if(!empty($horarior)):
+				foreach($horarior as $i => $v):
+				?>
+				<div style="width:100%; overflow: auto;">
+					<input style="float:left; width:20%; padding:10px" type="text" name="horarior[]" value="<?php echo $v ?>" placeholder="Horário P">
+					<input style="float:left; width:55%; padding:10px" type="text" name="destinor[]" value="<?php echo $destinor[$i] ?>" placeholder="Destino P">
+					<a class="remover" href="#" style="float:left; text-decoration:none; padding:10px; display:block; width:10%; text-align:center; border:2px solid red;color:red">X</a>
+				</div>
+				<?php
+				endforeach;
+			endif;
+				?>
+		</div>
 	</div>
 	<div style="clear:both"></div>
 	<script>
 		jQuery(document).ready(function(){
 
-		    jQuery('.partida').on('click',function(){
-		    	jQuery('.cpartida').append('<div style="width:100%; margin-right:20px"><input style="float:left; width:20%; padding:10px" type="text" name="horariop[]" placeholder="Horário P"><input style="float:left; width:60%; padding:10px" type="text" name="destinop[]" placeholder="Destino P"><a class="remover" href="#" style="float:left; text-decoration:none; padding:10px; display:block; width:10%; text-align:center; border:2px solid red;color:red">X</a></div>');
+		    jQuery('.partida').on('click',function(e){
+		    	e.preventDefault();
+		    	jQuery('.cpartida').append('<div style="width:100%"><input style="float:left; width:20%; padding:10px" type="text" name="horariop[]" placeholder="Horário P"><input style="float:left; width:55%; padding:10px" type="text" name="destinop[]" placeholder="Destino P"><a class="remover" href="#" style="float:left; text-decoration:none; padding:10px; display:block; width:10%; text-align:center; border:2px solid red;color:red">X</a></div>');
 		    });
-		    jQuery('.retorno').on('click',function(){
-		    	jQuery('.cretorno').append('<div style="width:100%; margin-right:20px"><input style="float:left; width:20%; padding:10px" type="text" name="horarior[]" placeholder="Horário R"><input style="float:left; width:60%; padding:10px" type="text" name="destinor[]" placeholder="Destino R"><a class="remover" href="#" style="float:left; text-decoration:none; padding:10px; display:block; width:10%; text-align:center; border:2px solid red;color:red">X</a></div>');
+		    jQuery('.retorno').on('click',function(e){
+		    	e.preventDefault();
+		    	jQuery('.cretorno').append('<div style="width:100%"><input style="float:left; width:20%; padding:10px" type="text" name="horarior[]" placeholder="Horário R"><input style="float:left; width:55%; padding:10px" type="text" name="destinor[]" placeholder="Destino R"><a class="remover" href="#" style="float:left; text-decoration:none; padding:10px; display:block; width:10%; text-align:center; border:2px solid red;color:red">X</a></div>');
 		    });
-		    jQuery('.cpartida').on('click','.remover',function(){
+		    jQuery('.cpartida').on('click','.remover',function(e){
+		    	e.preventDefault();
 		    	jQuery(this).parent().remove();
 		    });
-		    jQuery('.cretorno').on('click','.remover',function(){
+		    jQuery('.cretorno').on('click','.remover',function(e){
+		    	e.preventDefault();
 		    	jQuery(this).parent().remove();
 		    });
 		});

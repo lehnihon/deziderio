@@ -24,7 +24,7 @@
 											<strong>Realize seu</strong>
 											<h2>Login</h2>
 										</div>
-										<p>Para acessar seus boletos realize seu login. Lembre-se, é necessário realizar um cadastro para ter acesso, se ainda não tem <a href="cadastro.html" title="" itemprop="url">cadastre-se aqui</a> ou entre em <a href="contato.html" title="" itemprop="url">contato</a>  com nossa equipe.</p>
+										<p>Para acessar seus boletos realize seu login. Lembre-se, é necessário realizar um cadastro para ter acesso, se ainda não tem <a href="<?php echo home_url( '/cadastro' ); ?>" title="" itemprop="url">cadastre-se aqui</a> ou entre em <a href="<?php echo home_url( '/contato' ); ?>" title="" itemprop="url">contato</a>  com nossa equipe.</p>
 										<form>
 											<div class="row">
 											<div class="sign-in banner-detail1">

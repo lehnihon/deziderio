@@ -29,7 +29,7 @@
                                                 <ul class="avatar">
                                                     <li>
                                                         <span><img src="<?php echo dirname( get_bloginfo('stylesheet_url'))?>/images/resource/avatar.png" alt="" /></span>
-                                                        <a href="sobre-nos.html" title="">Equipe Dezidério</a>
+                                                        <a href="<?php echo home_url( '/colaboradores' ); ?>" title="">Equipe Dezidério</a>
                                                     </li>
                                                     <li>
                                                         <div class="date2">
@@ -55,7 +55,7 @@
                                                 <ul class="avatar">
                                                     <li>
                                                         <span><img src="<?php echo dirname( get_bloginfo('stylesheet_url'))?>/images/resource/avatar.png" alt="" /></span>
-                                                        <a href="sobre-nos.html" title="">Equipe Dezidério</a>
+                                                        <a href="<?php echo home_url( '/colaboradores' ); ?>" title="">Equipe Dezidério</a>
                                                     </li>
                                                     <li>
                                                         <div class="date2">
@@ -81,7 +81,7 @@
                                                 <ul class="avatar">
                                                     <li>
                                                         <span><img src="<?php echo dirname( get_bloginfo('stylesheet_url'))?>/images/resource/avatar.png" alt="" /></span>
-                                                        <a href="sobre-nos.html" title="">Equipe Dezidério</a>
+                                                        <a href="<?php echo home_url( '/colaboradores' ); ?>" title="">Equipe Dezidério</a>
                                                     </li>
                                                     <li>
                                                         <div class="date2">

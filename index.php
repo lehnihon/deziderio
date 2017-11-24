@@ -178,7 +178,7 @@ get_header(); ?>
 
 
      <section class="block grayish no-padding">
-            <div class="parallax" data-velocity="-.3" style="background-image: url(file:///Volumes/HD%20EXTERNO%20WALTER/WebSites/site-deziderio-rev2/images/parallax2.jpg); background-size: cover; background-attachment: scroll; background-position: 50% -173.7px; background-repeat: no-repeat no-repeat;"></div>
+            <div class="parallax" data-velocity="-.3" style="<?php echo dirname( get_bloginfo('stylesheet_url'))?>/images/parallax2.jpg); background-size: cover; background-attachment: scroll; background-position: 50% -173.7px; background-repeat: no-repeat no-repeat;"></div>
             <div class="container">
                 <div class="row">
                     <div class="col-md-12">
@@ -244,15 +244,19 @@ get_header(); ?>
 								<?php 
 
 								$args = array(
-								    'orderby' => 'post_date',
-								    'order' => 'DESC');
+								    'posts_per_page' => 12,'orderby' => 'rand','order' => 'ASC','post_type' => 'itinerario');
 								$query = new WP_Query( $args ); 
 								?>	
 
 								<?php if ( $query->have_posts() ) : ?>
 
-									<?php /* Start the Loop */ ?>
-									<?php while ( $query->have_posts() ) : $query->the_post(); ?>
+									<?php $i = 1 ?>
+									<?php while ( $query->have_posts() ) : $query->the_post(); 
+                                    $coordenador = get_post_meta($query->post->ID, 'coordenador', true);
+                                    $telefone = get_post_meta($query->post->ID, 'telefone', true);
+                                    $embarque = get_post_meta($query->post->ID, 'embarque', true);
+                                    $onibus = get_post_meta($query->post->ID, 'onibus', true);
+                                    ?>
 
 										<div class="col-md-6">
 	                                    <div class="dark-title">
@@ -267,34 +271,34 @@ get_header(); ?>
 													'class' => "e-cinza img-responsive",
 													)); ?>
 	                                                <span><i class="fa fa-map-marker"></i></span>
-	                                                <div id="google_map20" class="google-map">
+	                                                <div id="google_map<?php echo $i; ?>" class="google-map">
 	                                                </div><!-- Google Map -->
 	                                            </div>
 	                                            <div class="post-info">
 	                                                <ul class="avatar">
 	                                                    <li>
-	                                                        <span><img src="<?php echo dirname( get_bloginfo('stylesheet_url'))?>/images/resource/luiz-deziderio.png" alt="" /></span>
-	                                                        <a href="colaboradores.html" title=""><b>Jurandir</b><br>Coordenador</a>
+	                                                       
+	                                                        <a href="<?php echo home_url( '/colaboradores' ); ?>" title=""><b><?php echo $coordenador; ?></b><br>Coordenador</a>
 	                                                    </li>
 	                                                    <li>
 	                                                       
 	                                                    </li>
 	                                                </ul>                           
 	                                                <div class="location">
-	                                                    <p><i class="fa fa-map-marker"></i> <b>Embarque:</b> Itupeva</p>
-	                                                    <p><i class="fa fa-map-marker"></i> <b>Destino:</b> Alphaville</p>
-	                                                    <p><i class="fa fa-bus"></i> <b>Ônibus:</b> Cometa - 13122</p>
+	                                                    <p><i class="fa fa-map-marker"></i> <b>Embarque:</b> <?php echo $embarque; ?></p>
+	                                                    <p><i class="fa fa-map-marker"></i> <b>Destino:</b> <?php the_title(); ?></p>
+	                                                    <p><i class="fa fa-bus"></i> <b>Ônibus:</b> <?php echo $onibus; ?></p>
 	                                                    <br><br>
 	                                                    <br>
 	                                                    <br>
 	                                                    <br>
-	                                                    <a href="unip-shopping-morumbi.html" title="" class="btns sml-btn thm-skin"><i class="fa fa-clock-o"></i>HORÁRIOS E ROTAS</a>
+	                                                    <a href="<?php the_permalink(); ?>" title="" class="btns sml-btn thm-skin"><i class="fa fa-clock-o"></i>HORÁRIOS E ROTAS</a>
 	                                                </div>
 	                                            </div>
 	                                        </div><!-- Blog Post -->
 	                                    </div><!-- Blog Post Carousel -->  
 
-									<?php endwhile; ?>
+									<?php $i++; endwhile; ?>
 									<?php
 									$big = 999999999; // need an unlikely integer
 									echo paginate_links( array(

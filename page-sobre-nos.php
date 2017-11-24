@@ -49,7 +49,7 @@
 												</div>
 											</div>
 										</div>
-										<a class="btns mid-btn thm-skin sml-radius" href="contato.html" title=""><i class="fa fa-paper-plane"></i>  ENTRAR EM CONTATO</a>
+										<a class="btns mid-btn thm-skin sml-radius" href="<?php echo home_url( '/contato' ); ?>" title=""><i class="fa fa-paper-plane"></i>  ENTRAR EM CONTATO</a>
 									</div>
 								</div>
 								<div class="col-md-6">
