@@ -1,9 +1,9 @@
 <?php
-$coordenador = get_post_meta($_GET['pdf'], 'coordenador', true);
+$coordenador = utf8_decode(get_post_meta($_GET['pdf'], 'coordenador', true));
 $telefone = get_post_meta($_GET['pdf'], 'telefone', true);
-$embarque = get_post_meta($_GET['pdf'], 'embarque', true);
-$onibus = get_post_meta($_GET['pdf'], 'onibus', true);
-$title = get_the_title($_GET['pdf']);
+$embarque = utf8_decode(get_post_meta($_GET['pdf'], 'embarque', true));
+$onibus = utf8_decode(get_post_meta($_GET['pdf'], 'onibus', true));
+$title = utf8_decode(get_the_title($_GET['pdf']));
 
 $horariop = get_post_meta($_GET['pdf'], 'horariop', true);
 $destinop = get_post_meta($_GET['pdf'], 'destinop', true);
@@ -50,7 +50,7 @@ while($continua){
 	if(!empty($destinop[$i]))
 		$continua = true;
 	$pdf->Cell(30,7,$horariop[$i],1);
-	$pdf->Cell(130,7,$destinop[$i],1);
+	$pdf->Cell(130,7,utf8_decode($destinop[$i]),1);
 	$pdf->Ln();
 	$i++;
 }
@@ -76,7 +76,7 @@ while($continua){
 	if(!empty($destinor[$i]))
 		$continua = true;
 	$pdf->Cell(30,7,$horarior[$i],1);
-	$pdf->Cell(130,7,$destinor[$i],1);
+	$pdf->Cell(130,7,utf8_decode($destinor[$i]),1);
 	$pdf->Ln();
 	$i++;
 }
